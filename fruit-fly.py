@@ -3,6 +3,7 @@ import pandas as pd
 import random
 import math
 from collections import defaultdict
+import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
     df_train = pd.read_csv('mnist_train_1000.csv')
@@ -55,4 +56,15 @@ if __name__ == '__main__':
 
         ## NOTE: WE STILL NEED TO CHECK THE SIMILARITIES BETWEEN EACH X INSIDE THE BIN's List
 
-    
+
+    # visualize check the elements in the first bin
+    print(len(bins))
+    fig = plt.figure()
+    for _, val in bins.items():
+        for i in range(min(len(val), 9)):
+            plt.subplot(3, 3, i + 1)
+            plt.imshow(np.reshape(val[i], (28, 28)))
+            plt.axis('off')
+        plt.tight_layout()
+        plt.show()
+        break
