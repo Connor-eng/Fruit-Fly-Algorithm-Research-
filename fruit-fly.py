@@ -57,7 +57,7 @@ if __name__ == '__main__':
         ## NOTE: WE STILL NEED TO CHECK THE SIMILARITIES BETWEEN EACH X INSIDE THE BIN's List
 
 
-    # visualize check the elements in the first bin
+    # visualize the elements in the first bin
     print(len(bins))
     fig = plt.figure()
     for _, val in bins.items():
